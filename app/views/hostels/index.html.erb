@@ -1,0 +1,46 @@
+<div class="container"
+    <div class="row justify-content-center">
+
+      <div class="col-12 col-8">
+          <h1>30 Millions D'amis </h1>
+          <div class="card-product">
+            <img src= <%= @hostel.image_url %> >
+            <div class="card-product">
+            <img src= <%= @hostel.image_url %> >
+            <div class="card-product-infos">
+            <h2>LA SOLUTION A VOTRE PROBLEME</h2>
+            <p>Besoin de s'absenter quelque jours? <strong>Pas de panique</strong> Trouver un particulier tout prêt de vous.</p>
+          </div>
+
+        </div>
+    </div>
+        <div class="col-12 col-6">
+          <h1> </h1>
+          <div class="card-product">
+            <img src= <%= @hostel.image_url %> >
+            <div class="card-product">
+            <img src= <%= @hostel.image_url %> >
+            <div class="card-product-infos">
+            <h2>LA SOLUTION A VOTRE PROBLEME</h2>
+            <p>Besoin de s'absenter quelque jours? <strong>Pas de panique</strong> Trouver un particulier tout prêt de vous.</p>
+          </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+    <tbody>
+        <% @hostels.each do |hostel| %>
+          <tr>
+          <td> <%= hostel.name %></td>
+          <td> <%= hostel.address %></td>
+          <td> <%= hostel.capacity %> </td>
+          <td> <%= hostel.type_pets %> </td>
+          <td> <%= hostel.description %> </td>
+          <li> <%= link_to hostel.name, hostel_path(hostel)%></li>
+          </tr>
+        <% end %>
+    </tbody>
