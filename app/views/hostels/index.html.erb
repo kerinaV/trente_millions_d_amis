@@ -1,53 +1,17 @@
-<div class="row justify-content-center">
-  <% @hostels.each do |hostel| %>
-
+<div class="container">
+  <div class="row justify-content-center">
     <div class="col-12 col-8">
-      <div class="card-product">
-        <img src = <%=@hostel.image_url %> >
-        <h1><%= @hostel.name%></h1>
-        <h2><%= @hostel.address%></h2>
+      <div class="cards">
+        <% @hostels.each do |hostel| %>
+          <%= link_to hostel_path(hostel) do %>
+            <div class="card-product">
+              <%= image_tag hostel.image_url %>
+              <h1><%= hostel.name %></h1>
+              <h2><%= hostel.address %></h2>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
-
-       <div class="col-12 col-8">
-      <div class="card-product">
-        <img src= <%= @hostel.image_url %> >
-        <h1><%= @hostel.name%></h1>
-        <h2><%= @hostel.address%></h2>
-      </div>
-    </div>
-
-       <div class="col-12 col-8">
-      <div class="card-product">
-        <img src= <%= @hostel.image_url %> >
-        <h1><%= @hostel.name%></h1>
-        <h2><%= @hostel.address%></h2>
-      </div>
-    </div>
-
-       <div class="col-12 col-8">
-      <div class="card-product">
-        <img src= <%= @hostel.image_url %> >
-        <h1><%= @hostel.name%></h1>
-        <h2><%= @hostel.address%></h2>
-      </div>
-    </div>
-
-       <div class="col-12 col-8">
-      <div class="card-product">
-        <img src= <%= @hostel.image_url %> >
-        <h1><%= @hostel.name%></h1>
-        <h2><%= @hostel.address%></h2>
-      </div>
-    </div>
-
-       <div class="col-12 col-8">
-      <div class="card-product">
-        <img src= <%= @hostel.image_url %> >
-        <h1><%= @hostel.name%></h1>
-        <h2><%= @hostel.address%></h2>
-      </div>
-    </div>
-
-  <% end %>
+  </div>
 </div>
