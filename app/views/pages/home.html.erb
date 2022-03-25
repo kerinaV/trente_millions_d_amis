@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://thumbs.dreamstime.com/b/groupe-d-animaux-familiers-23828640.jpg);">
+  <div class="container">
+    <h1>30 millions d'amis</h1>
+    <p>SOYEZ TRANQUILLE !<br>La solution à votre problème</p>
+    <%= link_to "decouvrez plus", hostels_path, class:"btn btn-flat"  %>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="col-12 col-8">
+    <div class="cards">
+      <% @hostels.each do |hostel| %>
+        <%= link_to hostel_path(hostel) do %>
+          <div class="card-product">
+            <%= image_tag hostel.image_url %>
+            <h1><%= hostel.name %></h1>
+            <h2><%= hostel.address %></h2>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
